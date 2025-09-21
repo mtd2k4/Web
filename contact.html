@@ -8,7 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     .topbar{font-size:.925rem;background:#f8f9fa}
-    .banner{height:220px;position:relative;color:#fff;}
+    .banner{height:220px;position:relative;color:#fff;
+      background:url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat}
     .banner::before{content:"";position:absolute;inset:0;background:rgba(13,110,253,.55)}
     .banner .content{position:relative;z-index:1;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center}
     .section-title{border-left:4px solid #0d6efd;padding-left:.6rem}
@@ -18,114 +19,60 @@
 </head>
 <body>
 
-
-
-
   <!-- Navbar -->
-  <!-- .navbar: Lớp cơ bản cho thanh điều hướng Bootstrap, tạo cấu trúc navbar. -->
-  <!-- .navbar-expand-lg: Mở rộng navbar ở màn hình lớn (lg), thu gọn ở màn hình nhỏ. -->
-  <!-- .bg-primary: Nền màu primary (xanh dương mặc định). -->
-  <!-- .navbar-dark: Chế độ tối cho text và icon (phù hợp với nền tối). -->
-  <!-- .sticky-top: Giữ navbar dính ở đầu trang khi cuộn. -->
-  <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top">
-    <!-- .container: Container Bootstrap để giới hạn chiều rộng nội dung, responsive. -->
-    <div class="container">
-      <!-- .navbar-brand: Lớp cho logo hoặc tên thương hiệu trong navbar. -->
-      <!-- .d-flex: Display flex để sắp xếp các phần tử ngang hàng. -->
-      <!-- .align-items-center: Căn giữa các phần tử theo chiều dọc. -->
-      <!-- .gap-2: Khoảng cách 2 giữa các phần tử (từ Bootstrap 5). -->
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Bootstrap_logo.svg/48px-Bootstrap_logo.svg.png" style="height:44px" alt="">
-        <!-- .lh-sm: Line-height small để điều chỉnh khoảng cách dòng. -->
-        <div class="lh-sm">
-          <strong>QUẢN LÝ MÔN HỌC</strong>
-        </div>
+  <nav class="navbar navbar-expand-lg sticky-top navbar-blur">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="home.html">
+        <span class="badge rounded-pill" style="background: linear-gradient(135deg, var(--brand), var(--brand-2));">QL</span>
+        <strong>Quản lý môn học</strong>
       </a>
-      <!-- .navbar-toggler: Nút toggle để mở/đóng menu ở màn hình nhỏ. -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <!-- .navbar-toggler-icon: Icon mặc định cho toggler. -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- .collapse: Lớp để ẩn/hiện nội dung (dùng với data-bs-toggle). -->
-      <!-- .navbar-collapse: Kết hợp với collapse cho navbar. -->
-      <div class="collapse navbar-collapse" id="mainNav">
-        <!-- .navbar-nav: Danh sách nav items trong navbar. -->
-        <!-- .ms-auto: Margin start auto để đẩy nav sang phải. -->
-        <ul class="navbar-nav ms-auto">
-          <!-- .nav-item: Mỗi item trong navbar-nav. -->
-          <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
-          <!-- .nav-link: Lớp cho liên kết trong nav. -->
-          <li class="nav-item"><a class="nav-link" href="#">Giới thiệu</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Tin tức</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Tuyển sinh</a></li>
-          <!-- .active: Đánh dấu item đang active (liên kết hiện tại). -->
-          <li class="nav-item"><a class="nav-link active" href="#">Liên hệ</a></li>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav me-3">
+          <li class="nav-item"><a class="nav-link" href="home.html">Trang chủ</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">Giới thiệu</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Danh sách môn</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+          
         </ul>
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm"><i class="bi bi-moon-stars"></i></button>
       </div>
     </div>
   </nav>
 
-
   <!-- Banner -->
-  <!-- .banner: Class tùy chỉnh (không phải Bootstrap), nhưng kết hợp với .mb-3 (margin bottom 3). -->
   <section class="banner mb-3">
-    <!-- .content: Class tùy chỉnh. -->
     <div class="content">
-      <!-- .fw-bold: Font weight bold. -->
-      <!-- .text-uppercase: Chữ hoa toàn bộ. -->
       <h1 class="fw-bold text-uppercase">Liên hệ</h1>
-      <!-- .mb-0: Margin bottom 0. -->
-      <p class="mb-0">Kết nối với chúng tôi</p>
+      <p class="mb-0">Kết nối với Nhà trường</p>
     </div>
   </section>
 
-
   <!-- Breadcrumb -->
-  <!-- .container: Container Bootstrap. -->
   <nav class="container" style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
-    <!-- .breadcrumb: Lớp cho breadcrumb navigation. -->
-    <!-- .mb-4: Margin bottom 4. -->
     <ol class="breadcrumb mb-4">
-      <!-- .breadcrumb-item: Mỗi item trong breadcrumb. -->
       <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-      <!-- .active: Item active trong breadcrumb. -->
-      <!-- .aria-current="page": Thuộc tính ARIA cho accessibility. -->
       <li class="breadcrumb-item active" aria-current="page">Liên hệ</li>
     </ol>
   </nav>
 
-
   <!-- Content -->
-  <!-- .container: Container Bootstrap. -->
-  <!-- .pb-5: Padding bottom 5. -->
   <div class="container pb-5">
-    <!-- .row: Hàng trong grid system Bootstrap. -->
-    <!-- .g-4: Gutter (khoảng cách) 4 giữa các cột. -->
     <div class="row g-4">
-      <!-- .col-lg-8: Cột chiếm 8/12 ở màn hình lớn (lg). -->
+      <!-- Left: Map + Form -->
       <div class="col-lg-8">
-        <!-- .section-title: Class tùy chỉnh, kết hợp với .mb-3. -->
         <h3 class="section-title mb-3">Bản đồ &amp; liên hệ trực tuyến</h3>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3716.9511327673413!2d105.39706327584672!3d21.312947177956026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31348d4ebf6c9a5b%3A0xabb9e949be7982d0!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBDw7RuZyBOZ2hp4buHcCBWaeG7h3QgVHLDrA!5e0!3m2!1svi!2s!4v1758432864409!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-
-        <!-- .card: Lớp cơ bản cho card component. -->
-        <!-- .info-card: Class tùy chỉnh. -->
         <div class="card info-card">
-          <!-- .card-body: Nội dung bên trong card. -->
           <div class="card-body">
-            <!-- .card-title: Tiêu đề card. -->
-            <!-- .mb-3: Margin bottom 3. -->
             <h5 class="card-title mb-3"><i class="bi bi-envelope-paper me-2 text-primary"></i>Gửi thông tin liên hệ</h5>
             <form>
-              <!-- .row: Hàng grid. -->
-              <!-- .g-3: Gutter 3. -->
               <div class="row g-3">
-                <!-- .col-md-6: Cột chiếm 6/12 ở màn hình trung bình (md). -->
                 <div class="col-md-6">
-                  <!-- .form-label: Label cho form control. -->
                   <label class="form-label">Họ và tên</label>
-                  <!-- .form-control: Lớp cơ bản cho input, textarea, select. -->
                   <input type="text" class="form-control" placeholder="Nguyễn Văn A">
                 </div>
                 <div class="col-md-6">
@@ -138,7 +85,6 @@
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">Chủ đề</label>
-                  <!-- .form-select: Lớp cho select dropdown. -->
                   <select class="form-select">
                     <option>Hỏi đáp tuyển sinh</option>
                     <option>Hỗ trợ sinh viên</option>
@@ -146,21 +92,13 @@
                     <option>Khác…</option>
                   </select>
                 </div>
-                <!-- .col-12: Cột chiếm toàn bộ hàng. -->
                 <div class="col-12">
                   <label class="form-label">Nội dung</label>
                   <textarea class="form-control" rows="4" placeholder="Nhập nội dung…"></textarea>
                 </div>
               </div>
-              <!-- .d-flex: Display flex. -->
-              <!-- .align-items-center: Căn giữa dọc. -->
-              <!-- .gap-3: Khoảng cách 3. -->
-              <!-- .mt-3: Margin top 3. -->
               <div class="d-flex align-items-center gap-3 mt-3">
-                <!-- .btn: Lớp cơ bản cho button. -->
-                <!-- .btn-primary: Button primary (xanh dương). -->
                 <button class="btn btn-primary"><i class="bi bi-send me-1"></i> Gửi</button>
-                <!-- .text-secondary: Màu chữ secondary (xám). -->
                 <small class="text-secondary">* Nhà trường sẽ phản hồi trong giờ hành chính.</small>
               </div>
             </form>
@@ -168,29 +106,15 @@
         </div>
       </div>
 
-
-      <!-- .col-lg-4: Cột chiếm 4/12 ở màn hình lớn. -->
+      <!-- Right: Contact info -->
       <div class="col-lg-4">
-        <!-- .section-title: Class tùy chỉnh. -->
-        <!-- .mb-3: Margin bottom 3. -->
         <h5 class="section-title mb-3">Thông tin liên hệ</h5>
-        <!-- .card: Card component. -->
-        <!-- .info-card: Class tùy chỉnh. -->
-        <!-- .mb-3: Margin bottom 3. -->
         <div class="card info-card mb-3">
-          <!-- .card-body: Nội dung card. -->
           <div class="card-body">
-            <!-- .d-flex: Display flex. -->
-            <!-- .gap-3: Khoảng cách 3. -->
             <div class="d-flex gap-3">
-              <!-- .text-primary: Màu primary. -->
-              <!-- .fs-3: Font size 3 (lớn). -->
               <div class="text-primary fs-3"><i class="bi bi-geo-alt"></i></div>
               <div>
-                <!-- .fw-semibold: Font weight semibold. -->
                 <div class="fw-semibold">Trụ sở chính</div>
-                <!-- .small: Kích thước chữ small. -->
-                <!-- .text-secondary: Màu secondary. -->
                 <div class="small text-secondary">123 Đường Đại học, Việt Trì, Phú Thọ</div>
               </div>
             </div>
@@ -213,19 +137,9 @@
           </div>
         </div>
 
-
-        <!-- .card: Card. -->
-        <!-- .info-card: Tùy chỉnh. -->
-        <!-- .mb-3: Margin bottom 3. -->
         <div class="card info-card mb-3">
-          <!-- .card-body: Nội dung card. -->
           <div class="card-body">
-            <!-- .fw-semibold: Semibold. -->
-            <!-- .mb-2: Margin bottom 2. -->
             <div class="fw-semibold mb-2"><i class="bi bi-clock me-1 text-primary"></i>Giờ làm việc</div>
-            <!-- .list-unstyled: Danh sách không dấu đầu dòng. -->
-            <!-- .small: Chữ small. -->
-            <!-- .mb-0: Margin bottom 0. -->
             <ul class="list-unstyled small mb-0">
               <li>Thứ 2 – Thứ 6: 07:30 – 11:30, 13:30 – 17:00</li>
               <li>Thứ 7: 08:00 – 11:30</li>
@@ -234,17 +148,9 @@
           </div>
         </div>
 
-
-        <!-- .card: Card. -->
         <div class="card info-card">
-          <!-- .card-body: Nội dung card. -->
           <div class="card-body">
-            <!-- .fw-semibold: Semibold. -->
-            <!-- .mb-2: Margin bottom 2. -->
             <div class="fw-semibold mb-2"><i class="bi bi-headset me-1 text-primary"></i>Kênh hỗ trợ</div>
-            <!-- .list-unstyled: Danh sách không dấu. -->
-            <!-- .small: Chữ small. -->
-            <!-- .mb-0: Margin bottom 0. -->
             <ul class="list-unstyled small mb-0">
               <li><i class="bi bi-chevron-right"></i> Phòng Tuyển sinh: <a href="#">tuyensinh@vtui.edu.vn</a></li>
               <li><i class="bi bi-chevron-right"></i> Phòng Công tác SV: <a href="#">ctsv@vtui.edu.vn</a></li>
@@ -255,29 +161,17 @@
       </div>
     </div>
 
-
     <!-- Departments quick list -->
-    <!-- .row: Hàng grid. -->
-    <!-- .g-3: Gutter 3. -->
-    <!-- .mt-4: Margin top 4. -->
     <div class="row g-3 mt-4">
-      <!-- .col-lg-8: Cột chiếm 8/12 ở màn hình lớn. -->
       <div class="col-lg-8">
-        <!-- .section-title: Class tùy chỉnh. -->
-        <!-- .mb-3: Margin bottom 3. -->
         <h5 class="section-title mb-3">Đầu mối các đơn vị</h5>
-        <!-- .table-responsive: Table responsive, cuộn ngang ở màn hình nhỏ. -->
         <div class="table-responsive">
-          <!-- .table: Lớp cơ bản cho table Bootstrap. -->
-          <!-- .align-middle: Căn giữa theo chiều dọc trong ô. -->
           <table class="table align-middle">
-            <!-- .table-light: Nền light cho thead. -->
             <thead class="table-light">
               <tr>
                 <th>Đơn vị</th><th>Điện thoại</th><th>Email</th>
               </tr>
             </thead>
-            <!-- .small: Chữ small trong tbody. -->
             <tbody class="small">
               <tr><td>Phòng Đào tạo</td><td>(0210) 3 222 222</td><td>daotao@vtui.edu.vn</td></tr>
               <tr><td>Phòng CTSV</td><td>(0210) 3 333 333</td><td>ctsv@vtui.edu.vn</td></tr>
@@ -287,45 +181,22 @@
           </table>
         </div>
       </div>
-      <!-- .col-lg-4: Cột chiếm 4/12 ở màn hình lớn. -->
       <div class="col-lg-4">
-        <!-- .section-title: Class tùy chỉnh. -->
-        <!-- .mb-3: Margin bottom 3. -->
         <h5 class="section-title mb-3">Câu hỏi thường gặp</h5>
-        <!-- .accordion: Lớp cho accordion component. -->
         <div class="accordion" id="faq">
-          <!-- .accordion-item: Mỗi item trong accordion. -->
           <div class="accordion-item">
-            <!-- .accordion-header: Header của item. -->
             <h2 class="accordion-header">
-              <!-- .accordion-button: Nút toggle cho accordion. -->
-              <!-- data-bs-toggle="collapse": Kích hoạt collapse. -->
-              <!-- data-bs-target="#f1": ID target. -->
               <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1">Thủ tục xác nhận nhập học?</button>
             </h2>
-            <!-- .accordion-collapse: Phần collapse. -->
-            <!-- .collapse: Lớp collapse. -->
-            <!-- .show: Hiển thị mặc định (cho item đầu). -->
-            <!-- data-bs-parent="#faq": Parent accordion để chỉ mở một lúc. -->
             <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faq">
-              <!-- .accordion-body: Nội dung body. -->
-              <!-- .small: Chữ small. -->
               <div class="accordion-body small">Thí sinh tra cứu giấy báo trúng tuyển, nộp lệ phí và hồ sơ theo hướng dẫn của Phòng Tuyển sinh.</div>
             </div>
           </div>
-          <!-- .accordion-item: Mỗi item trong accordion. -->
           <div class="accordion-item">
-            <!-- .accordion-header: Header của item. -->
             <h2 class="accordion-header">
-              <!-- .accordion-button: Nút toggle. -->
-              <!-- .collapsed: Trạng thái collapsed cho button. -->
               <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">Xin giấy xác nhận sinh viên?</button>
             </h2>
-            <!-- .accordion-collapse: Phần collapse. -->
-            <!-- .collapse: Lớp collapse. -->
             <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faq">
-              <!-- .accordion-body: Nội dung body. -->
-              <!-- .small: Chữ small. -->
               <div class="accordion-body small">Liên hệ Phòng CTSV, mang theo thẻ SV/CCCD để được cấp trong ngày làm việc.</div>
             </div>
           </div>
@@ -333,51 +204,40 @@
       </div>
     </div>
 
-
   </div>
 
-
   <!-- Footer -->
-  <!-- .border-top: Viền trên. -->
-  <!-- .py-4: Padding y 4 (trên dưới). -->
   <footer class="border-top py-4">
-    <!-- .container: Container. -->
-    <!-- .small: Chữ small. -->
-    <!-- .text-secondary: Màu secondary. -->
     <div class="container small text-secondary">
-      <!-- .row: Hàng. -->
-      <!-- .g-3: Gutter 3. -->
       <div class="row g-3">
-        <!-- .col-md: Cột responsive ở md. -->
         <div class="col-md">
-          <!-- .fw-semibold: Semibold. -->
-          <!-- .text-dark: Màu dark. -->
           <div class="fw-semibold text-dark">Trường Đại học Công nghiệp – Mẫu</div>
           <div>Địa chỉ: 123 Đường Đại học, Việt Trì</div>
           <div>Điện thoại: (0210) 3 000 000</div>
           <div>Email: info@vtui.edu.vn</div>
         </div>
-        <!-- .col-md: Cột responsive ở md. -->
         <div class="col-md">
-          <!-- .fw-semibold: Semibold. -->
-          <!-- .text-dark: Màu dark. -->
-          <!-- .mb-2: Margin bottom 2. -->
           <div class="fw-semibold text-dark mb-2">Liên kết nhanh</div>
-          <!-- .list-unstyled: Danh sách không dấu. -->
           <ul class="list-unstyled">
-            <!-- .text-decoration-none: Không gạch chân liên kết. -->
             <li><a class="text-decoration-none" href="#">Tuyển sinh</a></li>
             <li><a class="text-decoration-none" href="#">Đào tạo</a></li>
             <li><a class="text-decoration-none" href="#">Tra cứu văn bản</a></li>
           </ul>
         </div>
       </div>
-      <!-- .mt-3: Margin top 3. -->
       <div class="mt-3">© 2025 Viet Tri University of Industry (demo). All rights reserved.</div>
     </div>
   </footer>
 
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('themeToggle').addEventListener('click', ()=>{
+      const html = document.documentElement;
+      const isLight = html.getAttribute('data-bs-theme') !== 'dark';
+      html.setAttribute('data-bs-theme', isLight ? 'dark' : 'light');
+      document.getElementById('themeToggle').innerHTML = 
+        isLight ? '<i class="bi bi-brightness-high"></i>' : '<i class="bi bi-moon-stars"></i>';
+    });
+  </script>
 </body>
 </html>
